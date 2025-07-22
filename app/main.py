@@ -10,7 +10,9 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="app/templates")
 
 if DEBUG:
-    hot_reload = arel.HotReload(paths=[arel.Path("app/templates")])
+    hot_reload = arel.HotReload(
+        paths=[arel.Path("app/templates"), arel.Path("static/input.css")]
+    )
 
     async def hot_reload_wrapper(websocket: WebSocket):
         await hot_reload(websocket.scope, websocket.receive, websocket.send)
