@@ -29,12 +29,12 @@ if DEBUG:
 
 @app.get("/", response_class=HTMLResponse)
 async def home_section(request: Request):
-    return templates.TemplateResponse("home/home.html", {"request": request})
+    return templates.TemplateResponse("home/home.jinja", {"request": request})
 
 
 @app.get("/about", response_class=HTMLResponse)
 async def about_section(request: Request):
-    return templates.TemplateResponse("about/about.html", {"request": request})
+    return templates.TemplateResponse("about/about.jinja", {"request": request})
 
 
 @app.get("/json", response_class=JSONResponse)
