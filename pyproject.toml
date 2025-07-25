@@ -18,3 +18,8 @@ dev = [
     "pytailwindcss>=0.2.0",
     "arel>=0.3.0",
 ]
+
+[tool.djlint]
+profile="jinja"
+max_blank_lines=1
+max_line_length=80

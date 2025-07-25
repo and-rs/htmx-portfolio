@@ -28,16 +28,25 @@
               sizes="16x16"
               href="/static/favicon/favicon-16x16.png">
         <link rel="manifest" href="/static/favicon/site.webmanifest">
+
         <!-- hot-reload script -->
-        {% if DEBUG %}{{ hot_reload.script(url_for('hot-reload') ) | safe }}{% endif %}
+        {% if DEBUG %}
+            {{ hot_reload.script(url_for('hot-reload') ) | safe }}
+        {% endif %}
     </head>
-    <body class="flex flex-col items-center w-full h-full border-b bg-background">
+    <body id="content"
+          class="flex flex-col items-center w-full h-full bg-background">
         {% block header %}
             {% include "partials/header.jinja" %}
         {% endblock header %}
-        <main class="pt-10">
+
+        <main id="main" class="pt-16 w-full">
             {% block content %}
             {% endblock content %}
         </main>
+
+        {% block footer %}
+            {% include "partials/footer.jinja" %}
+        {% endblock footer %}
     </body>
 </html>

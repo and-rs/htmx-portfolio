@@ -1,12 +1,10 @@
-{% extends 'base.jinja' %}
-{% block header %}
-    <header class="fixed z-50 py-2 px-4 w-full border border-b bg-background/30 backdrop-blur">
-        <div class="flex flex-row justify-between items-center">
-            <a class="text-xl font-medium hover:underline underline-offset-4">Juan Bautista</a>
-            <div class="flex flex-row justify-center">
-                <a class="btn-link">home</a>
-                <a class="btn-link">about</a>
-            </div>
+{% from 'components/btn_link.jinja' import btn_link %}
+<header class="fixed z-50 w-full border border-b bg-background/30 backdrop-blur">
+    <div class="flex flex-row justify-between items-center py-2 px-4 h-16">
+        <a class="text-xl font-medium hover:underline underline-offset-4">Juan Bautista</a>
+        <div class="flex flex-row justify-center">
+            {{ btn_link(url="/", text="home") }}
+            {{ btn_link(url="/about", text="about") }}
         </div>
-    </header>
-{% endblock header %}
+    </div>
+</header>

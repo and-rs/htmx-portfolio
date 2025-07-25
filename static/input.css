@@ -1,8 +1,12 @@
 @import "tailwindcss";
 @import "./basecoat.min.css";
 
-.btn-outline{
+.btn-outline {
   @apply hover:shadow hover:bg-primary hover:text-primary-foreground
+}
+
+.btn-link {
+  @apply text-base
 }
 
 :root {
