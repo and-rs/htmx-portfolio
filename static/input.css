@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "./basecoat.min.css";
+/* @import "./basecoat.min.css"; */
 @import "./theme.css";
 
 @layer utilities {
