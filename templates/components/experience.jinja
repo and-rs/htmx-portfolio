@@ -1,0 +1,32 @@
+{% macro item(xp) %}
+  <div class="flex relative flex-row">
+    <div class="relative flex-shrink-0 mr-6 ml-2">
+      <div class="absolute top-1/2 left-1/2 rounded border-2 -translate-x-1/2 -translate-y-1/2 size-3 bg-background border-primary">
+      </div>
+    </div>
+    <div class="w-full">
+      <div class="flex flex-row gap-2 justify-between h-fit">
+        <div class="xp-headers">
+          <h2 class="font-mono leading-none">{{ xp.title }}</h2>
+          <h2 class="leading-none text-muted-foreground">{{ xp.company }}</h2>
+        </div>
+        <div class="items-end text-right xp-headers">
+          <h2 class="font-mono leading-none">
+            {{ xp.start_date }}
+            {% if xp.end_date %}
+              / {{ xp.end_date }}
+            {% else %}
+              / present
+            {% endif %}
+          </h2>
+          <h2 class="leading-none text-muted-foreground w-fit">{{ xp.location }}</h2>
+        </div>
+      </div>
+      {% if xp.bullets %}
+        <ul>
+          {% for b in xp.bullets %}<li>{{ b }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+{% endmacro %}

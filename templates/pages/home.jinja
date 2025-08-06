@@ -1,6 +1,51 @@
+{% from 'components/experience.jinja' import item %}
 {% extends 'base.jinja' %}
 {% block content %}
-    <div class="m-4 h-60 border">
-        <span>Homepage</span>
+  <div class="m-6 space-y-8">
+    <article class="space-y-2">
+      <img class="float-right my-1 ml-4 rounded-xl border size-64"
+           src="/static/images/hero.jpg"
+           alt="This is a profile picture"
+           draggable="false" />
+      <div class="flex flex-col gap-1 mb-6">
+        <h1>Developer</h1>
+        <span class="font-mono text-muted-foreground">Fullstack & Data Engineering</span>
+      </div>
+      <p>Born and based in Colombia. I speak C1 English and native Spanish.</p>
+      <p>
+        Computers have always been my main interest, from customizing them to
+        building them. There is something about having artistic control over a
+        computer that I enjoy a lot. These days, I try to keep myself active by
+        skateboarding, because to no one's surprise, as a developer I spend many
+        hours in a chair. Feel free to reach out to me via LinkedIn if you wish
+        to talk!
+      </p>
+      <div>
+        <h2>Ideas I resonate with:</h2>
+        <ul class="text-base">
+          <li>
+            I value products that achieve strong profits through genuine
+            quality.
+          </li>
+          <li>
+            I avoid profit strategies that compromise product integrity.
+            <a class="link"
+               href="https://en.wikipedia.org/wiki/Enshittification"
+               rel="noopener noreferrer"
+               target="_blank">Enshittification*</a>
+          </li>
+        </ul>
+      </div>
+    </article>
+    <div>
+      <h1 class="mb-6">Experience</h1>
+      <div class="relative">
+        <div class="absolute top-0 left-2 h-full border -translate-x-1/2 pointer-events-none border-primary">
+        </div>
+        <div class="space-y-10">
+          {% for xp in experiences %}{{ item(xp) }}{% endfor %}
+        </div>
+      </div>
     </div>
+  </div>
 {% endblock content %}

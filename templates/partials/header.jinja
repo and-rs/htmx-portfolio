@@ -1,10 +1,10 @@
 {% from 'components/btn_link.jinja' import btn_link %}
-<header class="fixed z-50 w-full border border-b bg-background/30 backdrop-blur">
-    <div class="flex flex-row justify-between items-center py-2 px-4 h-16">
-        <a class="text-xl font-medium hover:underline underline-offset-4">Juan Bautista</a>
-        <div class="flex flex-row justify-center">
-            {{ btn_link(url="/", text="home") }}
-            {{ btn_link(url="/about", text="about") }}
-        </div>
+<header class="fixed z-50 w-4xl">
+  <div class="flex flex-row justify-between items-center py-2 px-6 border-b border-x border-x-primary h-18 bg-popover">
+    <a class="text-xl font-medium">Juan Bautista</a>
+    <div class="flex flex-row justify-center">
+      {{ btn_link(url="/", text="home") }}
+      {{ btn_link(url="/projects", text="projects") }}
     </div>
+  </div>
 </header>

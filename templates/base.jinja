@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Juan Bautista</title>
-        <!-- htmx -->
-        <script src="/static/htmx.min.js"></script>
-        <!-- tailwind -->
-        <link rel="stylesheet" href="/static/output.css" rel="preload">
-        <!-- basecoat -->
-        <script src="/static/basecoat.min.js" defer></script>
-        <!-- font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap"
-              rel="stylesheet">
-        <!-- favicon -->
-        <link rel="apple-touch-icon"
-              sizes="180x180"
-              href="/static/favicon/apple-touch-icon.png">
-        <link rel="icon"
-              type="image/png"
-              sizes="32x32"
-              href="/static/favicon/favicon-32x32.png">
-        <link rel="icon"
-              type="image/png"
-              sizes="16x16"
-              href="/static/favicon/favicon-16x16.png">
-        <link rel="manifest" href="/static/favicon/site.webmanifest">
-
-        <!-- hot-reload script -->
-        {% if DEBUG %}
-            {{ hot_reload.script(url_for('hot-reload') ) | safe }}
-        {% endif %}
-    </head>
-    <body id="content"
-          class="flex flex-col items-center w-full h-full bg-background">
-        {% block header %}
-            {% include "partials/header.jinja" %}
-        {% endblock header %}
-
-        <main id="main" class="pt-16 w-full">
-            {% block content %}
-            {% endblock content %}
-        </main>
-
-        {% block footer %}
-            {% include "partials/footer.jinja" %}
-        {% endblock footer %}
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Bautista</title>
+    <!-- htmx -->
+    <script src="/static/htmx.min.js"></script>
+    <!-- tailwind -->
+    <link rel="stylesheet" href="/static/output.css" rel="preload">
+    <!-- basecoat -->
+    <script src="/static/basecoat.min.js" defer></script>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap"
+          rel="stylesheet">
+    <!-- font-mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+          rel="stylesheet">
+    <!-- favicon -->
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/static/favicon/favicon-32x32.png">
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon/site.webmanifest">
+    <!-- hot-reload script -->
+    {% if DEBUG %}
+      {{ hot_reload.script(url_for('hot-reload') ) | safe }}
+    {% endif %}
+  </head>
+  <body id="content"
+        class="flex flex-col items-center w-full h-full min-h-screen">
+    {% block header %}
+      {% include "partials/header.jinja" %}
+    {% endblock header %}
+    <main id="main"
+          class="z-20 mb-20 rounded-b-xl border-b border-x border-primary w-4xl pt-18 bg-background">
+      {% block content %}
+      {% endblock content %}
+      {% block footer %}
+        {% include "partials/footer.jinja" %}
+      {% endblock footer %}
+    </main>
+  </body>
 </html>

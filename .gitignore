@@ -1,6 +1,7 @@
 # custom
 # this is dynamically built
 static/output.css
+.DS_Store
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
