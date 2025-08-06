@@ -7,10 +7,6 @@
 
 2. install dependencies
    ```
-   uv pip install pyproject.toml
-   ```
-   or
-   ```
    uv sync
    ```
 
@@ -24,11 +20,16 @@
    uv run tailwind.py
    ```
 
-### TODO
+### TODO (project optimization)
 
-- [ ] fix hot-reload types (arel)
+- [ ] download fonts
+- [ ] gzip and compress html and css files (htmx)
+- [ ] html image component
+- [ ] script for image compression and resizin
+- [ ] rethink basecoat usage and treeshake the css and js
 - [ ] script for updating static dependencies
 - [ ] black, djlint and basedpyright pre-commit pipeline
-- [ ] autoreload tailwind stylesheet
 - [ ] integrate rustywind?
 - [x] jinja fragments (not necessary)
+- [x] fix hot-reload types (arel)
+- [x] autoreload tailwind stylesheet
