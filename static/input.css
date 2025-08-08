@@ -36,7 +36,9 @@
   }
 
   .link {
-    @apply px-1 cursor-pointer border-b border-b-primary hover:rounded hover:shadow transition-all text-primary hover:text-accent hover:bg-accent-foreground;
+    @apply px-1 cursor-pointer border-b border-b-primary transition-all text-primary;
+    @apply hover:rounded hover:shadow hover:text-accent hover:bg-accent-foreground;
+    @apply active:rounded active:shadow active:text-accent active:bg-accent-foreground;
   }
 
   body::before {
