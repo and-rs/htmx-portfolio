@@ -5,12 +5,12 @@
       </div>
     </div>
     <div class="w-full">
-      <div class="flex flex-row gap-2 justify-between h-fit">
+      <div class="flex flex-col gap-2 sm:flex-row sm:justify-between h-fit">
         <div class="xp-headers">
           <h2 class="font-mono leading-none">{{ xp.title }}</h2>
           <h2 class="leading-none text-muted-foreground">{{ xp.company }}</h2>
         </div>
-        <div class="items-end text-right xp-headers">
+        <div class="sm:items-end sm:text-right xp-headers">
           <h2 class="font-mono leading-none">
             {{ xp.start_date }}
             {% if xp.end_date %}

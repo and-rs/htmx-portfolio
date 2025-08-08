@@ -43,13 +43,15 @@
     {% block header %}
       {% include "partials/header.jinja" %}
     {% endblock header %}
-    <main id="main"
-          class="z-20 mb-20 rounded-b-xl border-b border-x border-primary w-4xl pt-18 bg-background">
-      {% block content %}
-      {% endblock content %}
-      {% block footer %}
-        {% include "partials/footer.jinja" %}
-      {% endblock footer %}
+    <main class="container">
+      <div id="main"
+           class="z-20 mb-20 rounded-b-xl border-b border-x border-primary pt-18 bg-background">
+        {% block content %}
+        {% endblock content %}
+        {% block footer %}
+          {% include "partials/footer.jinja" %}
+        {% endblock footer %}
+      </div>
     </main>
   </body>
 </html>

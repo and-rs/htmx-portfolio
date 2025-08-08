@@ -12,11 +12,19 @@
   }
 
   ul {
-    @apply px-4 mt-1 space-y-2 text-sm leading-none list-disc
+    @apply px-4 mt-1 space-y-2 leading-none list-disc;
   }
 
-  .xp-headers{
-    @apply flex flex-col h-fit mb-2 gap-1
+  li {
+    @apply text-base/6;
+  }
+
+  .container {
+    @apply max-w-4xl w-full px-4;
+  }
+
+  .xp-headers {
+    @apply flex flex-col h-fit mb-2 gap-1;
   }
 
   .btn-outline {
@@ -43,7 +51,8 @@
     background-size: 200% 200%;
     animation: pan 180s linear infinite;
 
-    mask: linear-gradient(
+    mask:
+      linear-gradient(
         to right,
         hsl(0 0% 0% / 0) 0%,
         hsl(0 0% 0% / 1) 5%,
