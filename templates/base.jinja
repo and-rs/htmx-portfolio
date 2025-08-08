@@ -8,8 +8,6 @@
     <script src="/static/htmx.min.js"></script>
     <!-- tailwind -->
     <link rel="stylesheet" href="/static/output.css" rel="preload">
-    <!-- basecoat -->
-    <!-- <script src="/static/basecoat.min.js" defer></script> -->
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +31,10 @@
           sizes="16x16"
           href="/static/favicon/favicon-16x16.png">
     <link rel="manifest" href="/static/favicon/site.webmanifest">
+    <!-- iOS script for buttons style change -->
+    <script>
+      document.addEventListener("touchstart", () => {}, { passive: true });
+    </script>
     <!-- hot-reload script -->
     {% if DEBUG %}
       {{ hot_reload.script(url_for('hot-reload') ) | safe }}
