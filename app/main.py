@@ -1,5 +1,4 @@
 # pyright: reportUnknownMemberType=false
-import arel
 from fastapi import FastAPI, WebSocket
 from fastapi.staticfiles import StaticFiles
 
@@ -13,6 +12,8 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(router)
 
 if DEBUG:
+    import arel
+
     hot_reload = arel.HotReload(
         paths=[arel.Path("templates"), arel.Path("static/input.css")]
     )
