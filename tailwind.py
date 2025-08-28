@@ -6,7 +6,7 @@ if __name__ == "__main__":
         [
             "tailwindcss",
             "-i",
-            "static/input.css",
+            "static/styles/globals.css",
             "-o",
             "static/output.css",
             "--minify",

@@ -3,7 +3,7 @@ from fastapi import FastAPI, WebSocket
 from fastapi.staticfiles import StaticFiles
 
 from app.api import router
-from app.config.variables import DEBUG
+from app.config import DEBUG
 from app.dependencies import templates
 
 app = FastAPI(title="AI Categorizer")

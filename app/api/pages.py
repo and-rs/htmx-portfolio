@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from fastapi.requests import Request
 from fastapi.responses import HTMLResponse
 
-from app.config import get_experiences
+from app.data import get_experiences
 from app.dependencies import templates
 
 router = APIRouter()
