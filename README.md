@@ -22,14 +22,21 @@
 
 ### TODO (project optimization)
 
-- [ ] download fonts
-- [ ] gzip and compress html and css files (htmx)
-- [ ] html image component
-- [ ] script for image compression and resizin
-- [ ] script for updating static dependencies
-- [ ] black, djlint and basedpyright pre-commit pipeline
-- [ ] integrate rustywind?
-- [x] rethink basecoat usage and treeshake the css and js
-- [x] jinja fragments (not necessary)
-- [x] fix hot-reload types (arel)
-- [x] autoreload tailwind stylesheet
+1. dev and performance
+   - [ ] download fonts
+   - [ ] gzip and compress html and css files (htmx)
+   - [ ] html image component
+   - [ ] script for image compression and resizin
+   - [ ] script for updating static dependencies
+   - [ ] black, djlint and basedpyright pre-commit pipeline
+   - [ ] integrate rustywind?
+2. styles and content
+   - [ ] contact buttons
+   - [ ] resume (connected to gh repo)
+   - [ ] techs used
+
+- Done
+  - [x] rethink basecoat usage and treeshake the css and js
+  - [x] jinja fragments (not necessary)
+  - [x] fix hot-reload types (arel)
+  - [x] autoreload tailwind stylesheet

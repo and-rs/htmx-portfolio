@@ -31,4 +31,4 @@ if DEBUG:
     app.add_event_handler("startup", hot_reload.startup)
     app.add_event_handler("shutdown", hot_reload.shutdown)
     templates.env.globals["hot_reload"] = hot_reload
-    templates.env.globals["DEBUG"] = ()
+    templates.env.globals["DEBUG"] = True
