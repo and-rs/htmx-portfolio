@@ -5,17 +5,19 @@ from fastapi.staticfiles import StaticFiles
 from app.api import router
 from app.config import DEBUG
 from app.dependencies import templates
+from app.utils.svg_load import setup_svg_loader
 
-app = FastAPI(title="AI Categorizer")
+app = FastAPI(title="Juan Bautista Portfolio")
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(router)
+setup_svg_loader(templates)
 
 if DEBUG:
     import arel
 
     hot_reload = arel.HotReload(
-        paths=[arel.Path("templates"), arel.Path("static/input.css")]
+        paths=[arel.Path("templates"), arel.Path("static/styles")]
     )
 
     async def hot_reload_wrapper(websocket: WebSocket):

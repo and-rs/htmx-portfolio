@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from fastapi.requests import Request
 from fastapi.responses import HTMLResponse
 
-from app.data import get_experiences
+from app.data import get_experiences, get_projects
 from app.dependencies import templates
 
 router = APIRouter()
@@ -19,9 +19,10 @@ async def home_section(request: Request):
 
 @router.get("/projects", response_class=HTMLResponse)
 async def projects_section(request: Request):
+    projects = get_projects()
     return templates.TemplateResponse(
         "pages/projects.jinja",
-        {"request": request},
+        {"request": request, "projects": projects},
     )
 
 

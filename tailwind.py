@@ -9,7 +9,7 @@ if __name__ == "__main__":
             "static/styles/globals.css",
             "-o",
             "static/output.css",
-            "--minify",
             "--watch",
+            "--minify",
         ]
     )

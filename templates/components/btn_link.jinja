@@ -1,6 +1,14 @@
-{% macro btn_link(text, url, hxTarget="#content") %}
-  <a class="mx-2 font-medium link"
+{% from 'components/icon.jinja' import icon %}
+{% macro btn_link(text,  url, hxTarget="#content", styles="link text-primary border-b-primary", icon_name=null) %}
+  <a class="flex flex-row gap-2 items-center font-medium {{ styles }}"
      hx-target="{{ hxTarget }}"
      hx-push-url="true"
-     hx-get="{{ url }}">{{ text }}</a>
+     hx-get="{{ url }}">
+
+    {{ text }}
+
+    {% if icon_name %}
+      {{ icon(icon_name) }}
+    {% endif %}
+  </a>
 {% endmacro %}

@@ -7,8 +7,12 @@
     <div class="w-full">
       <div class="flex flex-col gap-2 sm:flex-row sm:justify-between h-fit">
         <div class="xp-headers">
-          <h2 class="font-mono leading-none">{{ xp.title }}</h2>
-          <h2 class="leading-none text-muted-foreground">{{ xp.company }}</h2>
+          <h2 class="font-mono leading-none">
+            {{ xp.title }}
+          </h2>
+          <h2 class="leading-none text-muted-foreground">
+            {{ xp.company }}
+          </h2>
         </div>
         <div class="sm:items-end sm:text-right xp-headers">
           <h2 class="font-mono leading-none">
@@ -19,12 +23,18 @@
               / present
             {% endif %}
           </h2>
-          <h2 class="leading-none text-muted-foreground w-fit">{{ xp.location }}</h2>
+          <h2 class="leading-none text-muted-foreground w-fit">
+            {{ xp.location }}
+          </h2>
         </div>
       </div>
       {% if xp.bullets %}
         <ul>
-          {% for b in xp.bullets %}<li>{{ b }}</li>{% endfor %}
+          {% for b in xp.bullets %}
+            <li>
+              {{ b }}
+            </li>
+          {% endfor %}
         </ul>
       {% endif %}
     </div>

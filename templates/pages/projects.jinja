@@ -1,6 +1,66 @@
-{% extends 'base.jinja' %}
+{% from 'components/btn_external.jinja' import btn_external %}
+{% extends "base.jinja" %}
 {% block content %}
-  <div class="m-4 h-60 border">
-    <h1>This is the projects section</h1>
-  </div>
-{% endblock content %}
+  <section class="p-4 mx-auto max-w-6xl projects">
+    {% for p in projects|sort(attribute="order") %}
+      <article class="mb-16">
+        <header class="mb-6 space-y-4">
+          <div class="flex flex-col gap-4 justify-between md:flex-row">
+            <h1>
+              {{ p.title }}
+            </h1>
+
+            {% set L = p.links or {} %}
+            {% if L.repo or L.demo or L.docs or L.post %}
+              <p class="flex flex-row gap-4 h-fit">
+                {% if L.repo %}
+                  {{ btn_external(url=L.repo, text="Code", styles="btn-alt", icon_name="github") }}
+                {% endif %}
+                {% if L.demo %}
+                  {{ btn_external(url=L.demo, text="Demo", styles="btn-alt", icon_name="globe") }}
+                {% endif %}
+              </p>
+            {% endif %}
+          </div>
+
+          {% if p.subtitle %}
+            <h3>
+              {{ p.subtitle }}
+            </h3>
+          {% endif %}
+
+          {% if p.media %}
+            <div class="flex flex-wrap gap-4 mb-6 media">
+              {% for m in p.media %}
+                <div class="overflow-hidden relative border shadow-2xs aspect-auto md:aspect-[16/7.5]">
+                  <img src="{{ m.src }}"
+                       alt="{{ m.alt }}"
+                       class="object-cover object-center w-full h-full">
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if p.tech %}
+            <p class="flex flex-wrap gap-2 mb-6">
+              {% for t in p.tech %}
+                <span class="py-0.5 px-2 text-sm transition-all cursor-default hover:rounded-xl bg-accent/80 border-b-[1.5px] hover:border-secondary/80 hover:bg-secondary/80">{{ t }}</span>
+              {% endfor %}
+            </p>
+          {% endif %}
+        </header>
+
+        {% if p.bullets %}
+          <ul>
+            {% for bullet in p.bullets %}
+              <li>
+                {{ bullet }}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+      </article>
+    {% endfor %}
+  </section>
+{% endblock %}

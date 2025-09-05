@@ -1,0 +1,14 @@
+{% from 'components/icon.jinja' import icon %}
+{% macro btn_external(text, url, styles="link text-primary border-b-primary", icon_name=null) %}
+  <a class="flex flex-row gap-2 items-center font-medium {{ styles }}"
+     href="{{ url }}"
+     target="_blank"
+     rel="noopener noreferrer">
+
+    {{ text }}
+
+    {% if icon_name %}
+      {{ icon(icon_name) }}
+    {% endif %}
+  </a>
+{% endmacro %}

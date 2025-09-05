@@ -10,6 +10,10 @@
     @apply text-base font-medium leading-6;
   }
 
+  h3 {
+    @apply font-mono text-muted-foreground;
+  }
+
   ul {
     @apply px-4 mt-1 space-y-2 leading-none list-disc;
   }
@@ -27,7 +31,13 @@
   }
 
   .link {
-    @apply px-1 cursor-pointer border-b border-b-primary transition-all text-primary;
+    @apply px-1 cursor-pointer border-b-[1.5px] transition-all w-fit;
+    @apply hover:rounded hover:shadow hover:text-accent hover:bg-accent-foreground;
+    @apply active:rounded active:shadow active:text-accent active:bg-accent-foreground;
+  }
+
+  .btn-alt {
+    @apply px-2 py-0.5 cursor-pointer bg-accent/80 border-b-[1.5px] transition-all;
     @apply hover:rounded hover:shadow hover:text-accent hover:bg-accent-foreground;
     @apply active:rounded active:shadow active:text-accent active:bg-accent-foreground;
   }
@@ -39,7 +49,6 @@
     position: fixed;
     background-size: 200% 200%;
     background-repeat: repeat-y;
-    animation: pan 180s linear infinite;
     background-image: url("/static/background.svg");
   }
 }

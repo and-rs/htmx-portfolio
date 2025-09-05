@@ -21,6 +21,7 @@ dev = [
 
 [tool.djlint]
 profile="jinja"
-max_blank_lines=0
+line_break_after_multiline_tag=true
+max_blank_lines=1
 max_line_length=80
 indent=2
