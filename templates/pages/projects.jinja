@@ -1,4 +1,6 @@
 {% from 'components/btn_external.jinja' import btn_external %}
+{% from 'components/image.jinja' import image with context %}
+
 {% extends "base.jinja" %}
 {% block content %}
   <section class="p-4 mx-auto max-w-6xl projects">
@@ -30,12 +32,10 @@
           {% endif %}
 
           {% if p.media %}
-            <div class="flex flex-wrap gap-4 mb-6 media">
+            <div class="flex flex-wrap gap-4 mb-6">
               {% for m in p.media %}
-                <div class="overflow-hidden relative border shadow-2xs aspect-auto md:aspect-[16/7.5]">
-                  <img src="{{ m.src }}"
-                       alt="{{ m.alt }}"
-                       class="object-cover object-center w-full h-full">
+                <div class="overflow-hidden relative w-full rounded border shadow-2xs">
+                  {{ image(slug=m.src, alt=m.alt, styles="aspect-auto w-full md:aspect-[16/7.5]") }}
                 </div>
               {% endfor %}
             </div>

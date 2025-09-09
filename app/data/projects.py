@@ -27,7 +27,7 @@ def get_projects():
             "media": [
                 {
                     "type": "image",
-                    "src": "/static/images/appointments.png",
+                    "src": "appointments-22681398",
                     "alt": "Appointments dashboard UI",
                 }
             ],
@@ -55,7 +55,7 @@ def get_projects():
             "media": [
                 {
                     "type": "image",
-                    "src": "/static/images/caminatas.png",
+                    "src": "caminatas-f4d77df8",
                     "alt": "Caminatas homepage",
                 }
             ],

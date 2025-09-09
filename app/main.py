@@ -1,10 +1,12 @@
 # pyright: reportUnknownMemberType=false
+from pathlib import Path
 from fastapi import FastAPI, WebSocket
 from fastapi.staticfiles import StaticFiles
 
 from app.api import router
 from app.config import DEBUG
 from app.dependencies import templates
+from app.utils.img_load import setup_img_loader
 from app.utils.svg_load import setup_svg_loader
 
 app = FastAPI(title="Juan Bautista Portfolio")
@@ -12,6 +14,7 @@ app = FastAPI(title="Juan Bautista Portfolio")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(router)
 setup_svg_loader(templates)
+setup_img_loader(image_path=Path("static") / "images" / "metadata.json")
 
 if DEBUG:
     import arel
