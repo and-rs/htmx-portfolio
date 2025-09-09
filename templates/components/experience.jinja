@@ -7,25 +7,25 @@
     <div class="w-full">
       <div class="flex flex-col gap-2 sm:flex-row sm:justify-between h-fit">
         <div class="xp-headers">
-          <h2 class="font-mono leading-none">
+          <h3 class="font-mono leading-none">
             {{ xp.title }}
-          </h2>
-          <h2 class="leading-none text-muted-foreground">
+          </h3>
+          <h3 class="leading-none text-muted-foreground">
             {{ xp.company }}
-          </h2>
+          </h3>
         </div>
         <div class="sm:items-end sm:text-right xp-headers">
-          <h2 class="font-mono leading-none">
+          <h3 class="font-mono leading-none">
             {{ xp.start_date }}
             {% if xp.end_date %}
               / {{ xp.end_date }}
             {% else %}
               / present
             {% endif %}
-          </h2>
-          <h2 class="leading-none text-muted-foreground w-fit">
+          </h3>
+          <h3 class="leading-none text-muted-foreground w-fit">
             {{ xp.location }}
-          </h2>
+          </h3>
         </div>
       </div>
       {% if xp.bullets %}

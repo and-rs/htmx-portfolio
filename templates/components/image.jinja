@@ -1,14 +1,15 @@
-{%- macro image(slug, alt="", sizes="(min-width: 1024px) 50vw, 100vw", styles="") -%}
+{%- macro image(slug, alt="", sizes="(min-width: 1024px) 50vw, 100vw", styles="", loading="lazy", fetchpriority="auto") -%}
   {% set meta = IMAGES.get(slug) %}
   {% if meta %}
     <img src="/static/images/{{ meta.placeholder }}"
+         alt="{{ alt }}"
          data-src="/static/images/{{ meta.slug }}-640.jpg"
          data-srcset="{% for w in meta.sizes %}/static/images/{{ meta.slug }}-{{ w }}.jpg {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}"
          data-sizes="{{ sizes }}"
          width="{{ meta.width }}"
          height="{{ meta.height }}"
-         alt="{{ alt }}"
-         loading="lazy"
+         fetchpriority="{{ fetchpriority }}"
+         loading="{{ loading }}"
          decoding="async"
          class="w-full h-auto object-cover blur-sm transition-all duration-300 {{ styles }}"
          onload="this.onload=null; this.src=this.dataset.src; this.srcset=this.dataset.srcset; this.sizes=this.dataset.sizes; this.classList.remove('blur-sm')"

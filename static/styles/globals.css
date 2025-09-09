@@ -7,11 +7,11 @@
   }
 
   h2 {
-    @apply text-base font-medium leading-6;
+    @apply font-mono text-muted-foreground;
   }
 
   h3 {
-    @apply font-mono text-muted-foreground;
+    @apply text-base font-medium leading-6;
   }
 
   ul {

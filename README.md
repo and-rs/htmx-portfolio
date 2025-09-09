@@ -25,11 +25,11 @@
 1. dev and performance
    - [ ] download fonts
    - [ ] gzip and compress html and css files (htmx)
-   - [ ] html image component
-   - [ ] script for image compression and resizin
    - [ ] script for updating static dependencies
    - [ ] black, djlint and basedpyright pre-commit pipeline
    - [ ] integrate rustywind?
+   - [ ] setting cache duration
+   - [ ] optimize image.jinja component
 2. styles and content
    - [ ] contact buttons
    - [ ] resume (connected to gh repo)
@@ -37,6 +37,8 @@
    - [ ] not found routes (404)
 
 - Done
+  - [x] html image component
+  - [x] script for image compression and resizin
   - [x] rethink basecoat usage and treeshake the css and js
   - [x] jinja fragments (not necessary)
   - [x] fix hot-reload types (arel)

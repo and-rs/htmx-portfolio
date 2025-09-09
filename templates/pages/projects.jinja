@@ -6,8 +6,8 @@
   <section class="p-4 mx-auto max-w-6xl projects">
     {% for p in projects|sort(attribute="order") %}
       <article class="mb-16">
-        <header class="mb-6 space-y-4">
-          <div class="flex flex-col gap-4 justify-between md:flex-row">
+        <div>
+          <header class="flex flex-row flex-wrap gap-4 justify-between items-center mb-6 md:gap-2">
             <h1>
               {{ p.title }}
             </h1>
@@ -23,13 +23,13 @@
                 {% endif %}
               </p>
             {% endif %}
-          </div>
 
-          {% if p.subtitle %}
-            <h3>
-              {{ p.subtitle }}
-            </h3>
-          {% endif %}
+            {% if p.subtitle %}
+              <h2 class="w-full">
+                {{ p.subtitle }}
+              </h2>
+            {% endif %}
+          </header>
 
           {% if p.media %}
             <div class="flex flex-wrap gap-4 mb-6">
@@ -48,7 +48,7 @@
               {% endfor %}
             </p>
           {% endif %}
-        </header>
+        </div>
 
         {% if p.bullets %}
           <ul>
