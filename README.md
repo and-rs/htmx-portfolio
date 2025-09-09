@@ -34,6 +34,7 @@
    - [ ] contact buttons
    - [ ] resume (connected to gh repo)
    - [ ] techs used
+   - [ ] not found routes (404)
 
 - Done
   - [x] rethink basecoat usage and treeshake the css and js
