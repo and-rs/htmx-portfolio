@@ -43,7 +43,7 @@
   }
 
   .grid-cell {
-    @apply text-base md:text-xl font-medium font-mono flex justify-center items-center;
+    @apply text-base md:text-lg font-medium font-mono flex justify-center items-center;
   }
 
   body::before {

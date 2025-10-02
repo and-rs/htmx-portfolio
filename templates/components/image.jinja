@@ -3,8 +3,8 @@
   {% if meta %}
     <img src="/static/images/{{ meta.placeholder }}"
          alt="{{ alt }}"
-         data-src="/static/images/{{ meta.slug }}-640.jpg"
-         data-srcset="{% for w in meta.sizes %}/static/images/{{ meta.slug }}-{{ w }}.jpg {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}"
+         data-src="/static/images/{{ meta.slug }}-640.webp"
+         data-srcset="{% for w in meta.sizes %}/static/images/{{ meta.slug }}-{{ w }}.webp {{ w }}w{% if not loop.last %}, {% endif %}{% endfor %}"
          data-sizes="{{ sizes }}"
          width="{{ meta.width }}"
          height="{{ meta.height }}"

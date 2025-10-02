@@ -40,29 +40,29 @@ def process_image(path: Path):
         height = int(width * ratio)
         resized = img.resize((width, height), Image.Resampling.LANCZOS)
 
-        avif_path = OUTPUT_DIR / f"{slug}-{width}.avif"
-        resized.save(
-            avif_path, format="AVIF", quality=QUALITIES["avif"], speed=6
-        )
-
-        # webp_path = OUTPUT_DIR / f"{slug}-{width}.webp"
+        # avif_path = OUTPUT_DIR / f"{slug}-{width}.avif"
         # resized.save(
-        #     webp_path, format="WEBP", quality=QUALITIES["webp"], method=6
+        #     avif_path, format="AVIF", quality=QUALITIES["avif"], speed=6
         # )
 
-        jpg_path = OUTPUT_DIR / f"{slug}-{width}.jpg"
-        resized.convert("RGB").save(
-            jpg_path,
-            format="JPEG",
-            quality=QUALITIES["jpg"],
-            optimize=True,
-            progressive=True,
+        webp_path = OUTPUT_DIR / f"{slug}-{width}.webp"
+        resized.save(
+            webp_path, format="WEBP", quality=QUALITIES["webp"], method=6
         )
+
+        # jpg_path = OUTPUT_DIR / f"{slug}-{width}.jpg"
+        # resized.convert("RGB").save(
+        #     jpg_path,
+        #     format="JPEG",
+        #     quality=QUALITIES["jpg"],
+        #     optimize=True,
+        #     progressive=True,
+        # )
 
     thumb = img.copy()
     thumb.thumbnail((24, 24), Image.Resampling.LANCZOS)
-    thumb_path = OUTPUT_DIR / f"{slug}-blur.jpg"
-    thumb.convert("RGB").save(thumb_path, format="JPEG", quality=20)
+    thumb_path = OUTPUT_DIR / f"{slug}-blur.webp"
+    thumb.convert("RGB").save(thumb_path, format="WEBP", quality=20)
 
     metadata = {
         "slug": slug,
@@ -71,8 +71,8 @@ def process_image(path: Path):
         "aspect_ratio": ratio,
         "sizes": SIZES,
         # "formats": ["avif", "webp", "jpg"],
-        "formats": ["avif", "jpg"],
-        "placeholder": f"{slug}-blur.jpg",
+        "formats": ["webp"],
+        "placeholder": f"{slug}-blur.webp",
     }
 
     print(f"Processed: {path.name} → {slug}")
