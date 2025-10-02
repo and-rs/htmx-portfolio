@@ -11,7 +11,7 @@ SIZES = [320, 640, 960, 1280, 1920]
 QUALITIES = {
     "avif": 55,
     "webp": 75,
-    "jpg": 78,
+    "jpg": 70,
 }
 
 
@@ -45,10 +45,10 @@ def process_image(path: Path):
             avif_path, format="AVIF", quality=QUALITIES["avif"], speed=6
         )
 
-        webp_path = OUTPUT_DIR / f"{slug}-{width}.webp"
-        resized.save(
-            webp_path, format="WEBP", quality=QUALITIES["webp"], method=6
-        )
+        # webp_path = OUTPUT_DIR / f"{slug}-{width}.webp"
+        # resized.save(
+        #     webp_path, format="WEBP", quality=QUALITIES["webp"], method=6
+        # )
 
         jpg_path = OUTPUT_DIR / f"{slug}-{width}.jpg"
         resized.convert("RGB").save(
@@ -70,11 +70,12 @@ def process_image(path: Path):
         "height": h,
         "aspect_ratio": ratio,
         "sizes": SIZES,
-        "formats": ["avif", "webp", "jpg"],
+        # "formats": ["avif", "webp", "jpg"],
+        "formats": ["avif", "jpg"],
         "placeholder": f"{slug}-blur.jpg",
     }
 
-    print(f"✔ Processed: {path.name} → {slug}")
+    print(f"Processed: {path.name} → {slug}")
     return metadata
 
 
@@ -98,4 +99,4 @@ if __name__ == "__main__":
     with open(OUTPUT_DIR / "metadata.json", "w") as f:
         json.dump(all_metadata, f, indent=2)
 
-    print("✔ All images processed. metadata.json written.")
+    print("All images processed. metadata.json written.")

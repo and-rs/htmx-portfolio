@@ -30,6 +30,7 @@
    - [ ] integrate rustywind?
    - [ ] setting cache duration
    - [ ] optimize image.jinja component
+   - [ ] switch to primary avif imges with webp fallback
 2. styles and content
    - [ ] contact buttons
    - [ ] resume (connected to gh repo)

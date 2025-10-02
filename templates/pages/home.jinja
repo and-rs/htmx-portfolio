@@ -30,9 +30,9 @@
         hours in a chair. Feel free to reach out to me via LinkedIn if you wish
         to talk!
       </p>
-      <h2>
+      <span class="font-mono font-medium text-md">
         Ideas I resonate with:
-      </h2>
+      </span>
       <ul>
         <li>
           I value products that achieve strong profits through genuine
@@ -46,6 +46,11 @@
         </li>
       </ul>
     </article>
+
+    {% block skills %}
+      {% include "partials/skill_grid.jinja" %}
+    {% endblock skills %}
+
     <div>
       <h1 class="mb-6">
         Experience

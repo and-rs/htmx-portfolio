@@ -42,6 +42,10 @@
     @apply active:rounded active:shadow active:text-accent active:bg-accent-foreground;
   }
 
+  .grid-cell {
+    @apply text-base md:text-xl font-medium font-mono flex justify-center items-center;
+  }
+
   body::before {
     inset: 0;
     content: "";
