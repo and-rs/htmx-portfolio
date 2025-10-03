@@ -1,6 +1,6 @@
 {# templates/components/icon.jinja #}
-{% macro icon(name, class="") %}
-  <span class="inline-flex items-center justify-center size-5 {{ class }}">
+{% macro icon(name, classes="size-4" ) %}
+  <span class="inline-flex items-center justify-center {{ classes }}">
     {{ load_svg_content(name) |safe }}
   </span>
 {% endmacro %}

@@ -1,53 +1,62 @@
+{% macro inner_square(radius_class, icon_name) %}
+  <div class="grid-cell-placeholder border-primary/30">
+    <div class="{{ radius_class }} w-full h-full bg-background">
+    </div>
+  </div>
+{% endmacro %}
+
 <div>
   <h1 class="mb-6">
     Top Skills
   </h1>
 
-  <div class="grid overflow-hidden grid-cols-3 grid-rows-5 h-56 rounded">
-    <div class="col-start-1 row-start-1 grid-cell bg-accent/90">
+  <div class="grid overflow-hidden relative grid-cols-3 grid-rows-6 h-56 bg-gradient-to-b from-secondary to-accent">
+
+    <div class="absolute w-full h-full bg-background">
+    </div>
+
+    <!-- skills – now opaque with rounded corners -->
+    <div class="col-start-1 row-start-1 rounded-l-lg rounded-tr-lg grid-cell">
       Node/Bun
     </div>
-
-    <div class="mx-1 mb-1 rounded border-[1.5px] border-primary/30"></div>
-
-    <div class="col-start-3 row-start-1 grid-cell bg-accent/90">
-      AWS
-    </div>
-
-    <div class="my-1 mr-1 rounded border-[1.5px] border-primary/30"></div>
-
-    <div class="col-start-2 row-start-2 grid-cell bg-accent/90">
+    <div class="col-start-2 row-start-2 grid-cell">
       TypeScript
     </div>
-
-    <div class="my-1 ml-1 rounded border-[1.5px] border-primary/30"></div>
-
-    <div class="col-start-3 row-start-3 grid-cell bg-accent/90">
+    <div class="col-start-3 row-start-1 rounded-r-lg rounded-tl-lg grid-cell">
       React
     </div>
 
-    <div class="m-1 rounded border-[1.5px] border-primary/30"></div>
-
-    <div class="col-start-1 row-start-3 grid-cell bg-accent/90">
+    <div class="col-start-1 row-start-3 rounded-l-lg grid-cell">
       Airflow
     </div>
-
-    <div class="my-1 mr-1 rounded border-[1.5px] border-primary/30"></div>
-
-    <div class="col-start-2 row-start-4 grid-cell bg-accent/90">
+    <div class="col-start-2 row-start-4 grid-cell">
       Python
     </div>
-
-    <div class="my-1 ml-1 rounded border-[1.5px] border-primary/30"></div>
-
-    <div class="col-start-3 row-start-5 grid-cell bg-accent/90">
+    <div class="col-start-3 row-start-3 rounded-r-lg grid-cell">
       Pandas
     </div>
 
-    <div class="mx-1 mt-1 rounded border-[1.5px] border-primary/30"></div>
-
-    <div class="col-start-1 row-start-5 grid-cell bg-accent/90">
+    <div class="col-start-1 row-start-5 rounded-l-lg grid-cell">
       Docker
     </div>
+    <div class="col-start-2 row-start-6 rounded-b-lg grid-cell">
+      Bash
+    </div>
+    <div class="col-start-3 row-start-5 rounded-r-lg grid-cell">
+      AWS
+    </div>
+
+    <!-- spacers (only inward borders) -->
+    {{ inner_square('rounded-br-lg rounded-bl-lg', 'typescript') }}
+    {{ inner_square('rounded-r-lg', 'bun') }}
+    {{ inner_square("rounded-l-lg") }}
+
+    {{ inner_square("rounded-lg") }}
+    {{ inner_square("rounded-r-lg") }}
+    {{ inner_square("rounded-l-lg") }}
+
+    {{ inner_square("rounded-lg") }}
+    {{ inner_square("rounded-tr-lg") }}
+    {{ inner_square("rounded-tl-lg") }}
   </div>
 </div>

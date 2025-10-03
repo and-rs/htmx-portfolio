@@ -43,7 +43,15 @@
   }
 
   .grid-cell {
-    @apply text-base md:text-lg font-medium font-mono flex justify-center items-center;
+    @apply gap-2 z-10 font-medium text-[15px] md:text-lg flex justify-center items-center;
+    background: inherit;
+    background-attachment: fixed;
+  }
+
+  .grid-cell-placeholder {
+    @apply z-10;
+    background: inherit;
+    background-attachment: fixed;
   }
 
   body::before {
