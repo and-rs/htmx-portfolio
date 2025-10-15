@@ -1,6 +1,6 @@
 :root {
   --font-sans: Golos Text, ui-sans-serif, sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
+  --font-mono: "Recursive", monospace;
   --radius: 0.4rem;
   --background: oklch(0.985 0 0);
   --foreground: oklch(0.141 0.005 285.823);

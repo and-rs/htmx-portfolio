@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juan Bautista</title>
+
     <!-- tailwind -->
     <link rel="stylesheet" href="/static/output.css" rel="preload">
+
     <!-- font preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <!-- font-sans -->
     <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap"
           rel="stylesheet">
+
     <!-- font-mono -->
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght,MONO@300..1000,1&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap"
           rel="stylesheet">
+
     <!-- htmx -->
     <script src="/static/htmx.min.js" defer></script>
+
     <!-- favicon -->
     <link rel="apple-touch-icon"
           sizes="180x180"
@@ -30,10 +36,12 @@
           sizes="16x16"
           href="/static/favicon/favicon-16x16.png">
     <link rel="manifest" href="/static/favicon/site.webmanifest">
+
     <!-- iOS script for buttons style change -->
     <script>
       document.addEventListener("touchstart", () => {}, { passive: true });
     </script>
+
     <!-- hot-reload script -->
     {% if DEBUG %}
       {{ hot_reload.script(url_for('hot-reload') ) | safe }}
@@ -43,15 +51,15 @@
         class="flex flex-col items-center w-full h-full min-h-screen">
     {% block header %}
       {% include "partials/header.jinja" %}
-    {% endblock header %}
+    {% endblock %}
     <main class="container">
       <div id="main"
-           class="z-20 mb-20 rounded-b-xl border-b border-x border-primary bg-background pt-18">
+           class="z-20 mb-20 rounded-b border-b border-x border-primary bg-background pt-18">
         {% block content %}
-        {% endblock content %}
+        {% endblock %}
         {% block footer %}
           {% include "partials/footer.jinja" %}
-        {% endblock footer %}
+        {% endblock %}
       </div>
     </main>
   </body>

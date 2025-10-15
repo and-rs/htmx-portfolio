@@ -7,7 +7,7 @@
   }
 
   h2 {
-    @apply font-mono text-muted-foreground;
+    @apply font-mono leading-6 text-muted-foreground;
   }
 
   h3 {

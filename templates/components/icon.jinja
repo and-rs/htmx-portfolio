@@ -1,5 +1,6 @@
-{# templates/components/icon.jinja #}
-{% macro icon(name, classes="size-4" ) %}
+{# icons can't have default size class, tw compiler wouldn't understand #}
+
+{% macro icon(name, classes="" ) %}
   <span class="inline-flex items-center justify-center {{ classes }}">
     {{ load_svg_content(name) |safe }}
   </span>

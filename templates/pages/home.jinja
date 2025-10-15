@@ -30,9 +30,11 @@
         hours in a chair. Feel free to reach out to me via LinkedIn if you wish
         to talk!
       </p>
-      <span class="font-mono font-medium text-md">
+
+      <p class="mt-6">
         Ideas I resonate with:
-      </span>
+      </p>
+
       <ul>
         <li>
           I value products that achieve strong profits through genuine
@@ -49,14 +51,14 @@
 
     {% block skills %}
       {% include "partials/skill_grid.jinja" %}
-    {% endblock skills %}
+    {% endblock %}
 
     <div>
       <h1 class="mb-6">
         Experience
       </h1>
       <div class="relative">
-        <div class="absolute top-0 left-2 h-full border -translate-x-1/2 pointer-events-none border-primary">
+        <div class="absolute top-0 left-2 h-full -translate-x-1/2 pointer-events-none border-[1.5px] border-primary">
         </div>
         <div class="space-y-14">
           {% for xp in experiences %}
@@ -66,4 +68,4 @@
       </div>
     </div>
   </div>
-{% endblock content %}
+{% endblock %}
