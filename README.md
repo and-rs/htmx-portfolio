@@ -1,4 +1,4 @@
-### AI Categorizer
+### HTMX Portfolio
 
 1. Install uv (please install globally)
    ```

@@ -1,39 +1,29 @@
 def get_experiences():
     return [
         {
-            "title": "Data Analyst / Engineer",
+            "title": "Data Engineer, Reliability",
             "company": "LogicSource",
             "start_date": "2025-05",
             "end_date": None,
             "location": "Remote, US",
             "bullets": [
-                "Build and maintain monthly procurement/spend pipelines on IkigaiLabs (proprietary cloud) using Python with validation and monitoring.",
-                "Automated file loading and type checks to cut manual steps, reducing average pipeline run time and task duration by about 20%.",
-                "Integrate and transform data from Oracle SQL sources, and produce reporting-ready models.",
+                "Replaced manual, error-prone Excel quality checks with a Python test suite, processing 100k+ monthly records across 40+ business cases using Polars.",
+                "Built an API orchestration layer to replace brittle UI-based data flows, ensuring all execution is version-controlled and reproducible in production.",
+                "Refactored massive monolithic Jupyter notebooks into modular Python projects, adding validation gates that cut pipeline processing time in half.",
+                "Standardized messy, manual data runs into deterministic pipelines with strict contracts, shifting the workflow from 'fire-fighting' to a stable system architecture.",
             ],
         },
         {
-            "title": "Fullstack Developer",
-            "company": "Freelance",
+            "title": "Platform Engineer",
+            "company": "Iridium",
             "start_date": "2023-12",
-            "end_date": "2025-04",
-            "location": "Bogotá, CO",
+            "end_date": None,
+            "location": "Remote, Global",
             "bullets": [
-                "Built a file‑ingestion system that hashed streamed uploads and wrote to a local blockchain database for versioning. Used dockerized MinIO for storage, Bun + Hono for the backend, and SolidJS for the frontend.",
-                "Developed custom business sites and portfolios with Next.js (SSR/ISR) and integrated CMS, analytics, and SEO.",
-                "Shipped full‑stack CRUD apps and set up CI and containerized services for consistent dev and prod environments.",
-            ],
-        },
-        {
-            "title": "Frontend Developer Apprenticeship",
-            "company": "HENRY",
-            "start_date": "2023-09",
-            "end_date": "2023-11",
-            "location": "Remote, AR",
-            "bullets": [
-                "Built e‑commerce features with React and Redux on an Express.js backend.",
-                "Worked in a team using Git flow, opened PRs, resolved merge conflicts, and followed reviews.",
-                "Learned production workflows such as state management, API integration, and testing while delivering sprint tasks on time.",
+                "Benchmarked Connect RPC streaming, finding a 2.1x speed advantage in Bun over Node.js and fixing backpressure issues for 100MB+ file uploads.",
+                "Building a custom HTTP/1.1 server in Zig to master manual memory management and low-level optimization in resource-constrained environments.",
+                "Created a Neovim/Lua developer environment that earned 75+ stars on GitHub; contributed core concurrency fixes to the Yazi file manager.",
+                "Designed a verifiable file system using a simplified blockchain ledger (SHA-256 hash chaining) in Postgres to guarantee data immutability.",
             ],
         },
     ]

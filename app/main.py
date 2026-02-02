@@ -1,5 +1,6 @@
 # pyright: reportUnknownMemberType=false
 from pathlib import Path
+
 from fastapi import FastAPI, WebSocket
 from fastapi.staticfiles import StaticFiles
 
@@ -26,9 +27,7 @@ if DEBUG:
     async def hot_reload_wrapper(websocket: WebSocket):
         await hot_reload(websocket.scope, websocket.receive, websocket.send)
 
-    app.add_websocket_route(
-        "/hot-reload", route=hot_reload_wrapper, name="hot-reload"
-    )
+    app.add_websocket_route("/hot-reload", route=hot_reload_wrapper, name="hot-reload")
 
     # annoying warnings related to unknow types from libraries
     app.add_event_handler("startup", hot_reload.startup)
